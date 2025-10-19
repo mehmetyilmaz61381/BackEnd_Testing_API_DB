@@ -1,0 +1,63 @@
+API :   Interface: UI and DB
+        Middlemen:
+
+REQUESTs: CRUD Operators
+Create : POST
+Read : GET
+Update: PUT, PATCH (partial update)
+Delete: DELETE
+
+RESPONSE: For Verification
+        - Status Code
+        - Content Type
+        - Headers (contains, or equal to)
+        - body
+            * String, contains method
+            * path method
+            * jsonPath method
+            * Hemcrest Matchers
+            ==== De-serialization=====  For GET response  as() method
+            * JSON response to JAVA Collections
+            * JSON response to POJO objects
+             ==== Serialization=====  For POST, PUT, PATCH request body
+                        * JAVA Collections request to API as JSON object
+                        * POJO objects request to API as JSON object
+DataBinder or Object Mapper
+* we have two libraries: GSON & JACKSON
+
+Static Import: when we import the static way, we don't need to write class name for static methods
+
+Assert.assertEquals(response.statusCode(),200);
+
+
+{      KEY                  VALUE
+    "post code":             "22031",
+    "country":              "United States",
+    "country abbreviation": "US",
+    "places": [
+        {
+            "place name": "Fairfax",
+            "longitude": "-77.2649",
+            "state": "Virginia",
+            "state abbreviation": "VA",
+            "latitude": "38.8604"
+        }
+    ]
+}
+
+int [] arr = new int[];
+arr[0] ---> first indexed element
+GPATH Syntax
+"places[0].\'place name\'"
+
+Test Case:
+{{hrurl}}/employees?q={"job_id": "AD_VP"}
+Verify:
+"employee_id": 102,
+"first_name": "Lex",
+ last_name": "De Haan",
+ "href": "http://54.91.210.3:1000/ords/hr/employees/102"
+    "count": 2,
+    =======================================
+    POJO : Plain Old Java Object
+    Templete Class for your JSON response
